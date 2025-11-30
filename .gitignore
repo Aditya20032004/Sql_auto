@@ -48,7 +48,7 @@ tf1/
 models/cache/
 models/fine_tuned/*.bin
 models/fine_tuned/*.safetensors
-models/trained_sql_model/
+# models/trained_sql_model/ - tracked with Git LFS
 data/training/*.cache
 data/validation/*.cache
 data/processed/sql_dataset/
@@ -56,8 +56,8 @@ data/processed/sql_dataset/
 *.pt
 *.pth
 *.ckpt
-*.h5
-*.keras
+# *.h5 - tracked with Git LFS for trained models
+# *.keras - tracked with Git LFS for trained models
 
 # Logs
 logs/
