@@ -2,6 +2,13 @@
 
 AI model that converts natural language to SQL queries using TensorFlow.
 
+## Functionality:
+✅ Complete TensorFlow training pipeline
+✅ Spider dataset integration (8000 examples)
+✅ Gradio web interface
+✅ Fuzzy accuracy metrics
+✅ Trained model excluded (too large for git)
+
 ## Tech Stack
 - **Model**: Google Flan-T5-base (250M parameters)
 - **Framework**: TensorFlow 2.15 + CUDA 12.2
