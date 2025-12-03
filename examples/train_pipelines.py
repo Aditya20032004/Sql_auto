@@ -38,10 +38,10 @@ def main():
                                              restore_best_weights = True,
                                              verbose =1,)
     
-    history = trainer.train(epochs=10,
+    history = trainer.train(epochs=20,
                             lr = 0.00015,
                             batch_size=1,
-                            callabacks = [early]
+                            callbacks = [early]
                             )
     logger.info("Training completed..now saving the model")
     trainer.save_model(output_path="models/trained_wikisql_model")

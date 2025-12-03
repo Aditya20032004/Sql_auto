@@ -42,7 +42,7 @@ class ModelTrainer:
         
         logger.info("Dataset converted to tf and starting training...")
         
-        history = self.model.fit(tf_dataset,epochs=epochs,verbose=1, callabacks = callbacks)
+        history = self.model.fit(tf_dataset,epochs=epochs,verbose=1, callbacks = callbacks)
         logger.info("Training completed.")
         return history
         
