@@ -21,13 +21,13 @@ class ModelTrainer:
         logger.info("Model and tokenizer loaded successfully!")
     
     def train(self, epochs=3,lr = 0.00005,#5e-5
-              batch_size=4):
+              batch_size=4, callbacks=None):
         if self.dataset is None:
             logger.error("No dataset loaded. Provide dataset_path in __init__")
             return 
         logger.info(f"starting training for {epochs} epochs with lr {lr} and batch size {batch_size}")
         
-        optimizer =tf.keras.optimizers.Adam(lr =lr)
+        optimizer = tf.keras.optimizers.Adam(lr=lr)
         self.model.compile(optimizer=optimizer)
         logger.info("Model compiled successfully")
         
@@ -36,12 +36,13 @@ class ModelTrainer:
             self.dataset,
             batch_size=batch_size,
             shuffle =True,
-            tokenizer=self.tokenizer
+            tokenizer=self.tokenizer,
+            collate_fn=None, # NEW ADDED
         )
         
         logger.info("Dataset converted to tf and starting training...")
         
-        history = self.model.fit(tf_dataset,epochs=epochs,verbose=1)
+        history = self.model.fit(tf_dataset,epochs=epochs,verbose=1, callabacks = callbacks)
         logger.info("Training completed.")
         return history
         

@@ -33,9 +33,15 @@ def main():
     trainer = ModelTrainer(model_name_or_path="google/flan-t5-base",
                            dataset_path="data/processed/wikisql_dataset")
     
-    history = trainer.train(epochs=30,
+    early = tf.keras.callbacks.EarlyStopping(monitor = 'loss',
+                                             patience =3,
+                                             restore_best_weights = True,
+                                             verbose =1,)
+    
+    history = trainer.train(epochs=10,
                             lr = 0.00015,
                             batch_size=1,
+                            callabacks = [early]
                             )
     logger.info("Training completed..now saving the model")
     trainer.save_model(output_path="models/trained_wikisql_model")

@@ -10,7 +10,7 @@ logger= setup_logger(__name__)
 def main():
     logger.info("Testing started for trained model...")
     
-    model = CodeGenerationModel(model_name_or_path="models/trained_sql_model")
+    model = CodeGenerationModel(model_name_or_path="models/trained_wikisql_model")
     test_prompts= [
         # Basic SELECT
         "Get all users",
