@@ -1,0 +1,4 @@
+tensorflow==2.15.0
+transformers==4.30.0
+datasets
+gradio==4.44.1

@@ -23,20 +23,23 @@ def main():
     logger.info("training pipeline...")
     
     builder = SQLDatasetBuilder()
-    builder.spider_dataset(max_examples=1000)
-    dataset = builder.save_dataset()
+    # builder.spider_dataset(max_examples=8000)
+
+    builder.wiqiSQL_dataset(max_examples=10000,use_schema=True)
+    dataset = builder.save_dataset(output_path="data/processed/wikisql_dataset")
     
     logger.info("Dataset saved..now starting training...")
     
     trainer = ModelTrainer(model_name_or_path="google/flan-t5-base",
-                           dataset_path="data/processed/sql_dataset")
+                           dataset_path="data/processed/wikisql_dataset")
     
     history = trainer.train(epochs=30,
-                            lr = 0.00015,  # Higher LR for faster learning
-                            batch_size=1,   # Larger batch for stability
+                            lr = 0.00015,
+                            batch_size=1,
                             )
     logger.info("Training completed..now saving the model")
-    trainer.save_model(output_path="models/trained_sql_model")
+    trainer.save_model(output_path="models/trained_wikisql_model")
+    # trainer.save_model(output_path="models/trained_sql_model")
     logger.info("Model saving sucessfull..")
     
 if __name__=="__main__":

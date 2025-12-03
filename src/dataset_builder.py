@@ -246,15 +246,56 @@ class SQLDatasetBuilder:
             self.examples= self.examples[:max_examples]
         logger.info(f"Loaded max examples:{len(self.examples)}")
         
-    
+    def wiqiSQL_dataset(self, max_examples=None, use_schema=True):
+        # importing from cache due to hugging face
+        import glob
+        logger.info("Loading data from WikiSQL dataset")
+        cache_dir = "/home/aditya/.cache/huggingface/datasets/wikisql/default/0.1.0/*/wikisql-train.arrow"
+        train_file = glob.glob(cache_dir)[0]
+        dt = Dataset.from_file(train_file)  # for arrow file extracting only
+        if max_examples:
+            dt = dt.select(range(min(max_examples,len(dt))))# this needs a list/range not slicing supported
+            # dt = dt[0:min(max_examples,len(dt))]
+        logger.info(f"processing files:{len(dt)}")
+        self.examples = []
+        for d in dt:
+            tn = d["table"]["name"]
+            col = d['table']['header']
+            types = d['table']['types']
+        
+            col_def = []
+            for c,t in zip(col,types):
+                clean_col = c.replace(' ','_').replace('/','_')
+                sql_type = 'REAL' if t=='real' else 'TEXT'
+                col_def.append(f"{clean_col} {sql_type}")
+            
+            create_stat=f"CREATE TABLE {tn} ({', '.join(col_def)}"   
+            if use_schema:
+                input_text = f"{create_stat});Question: {d['question']}" 
+            else:
+                input_text = d['question']
+            
+            self.examples.append({
+                "input":input_text,
+                "output":d['sql']['human_readable']
+            })
+        logger.info(f"loaded {len(self.examples)} Wikisql examples")
+        
     
     
 if __name__ == "__main__":
     logger.info("Starting dataset builder...")
     builder = SQLDatasetBuilder()
     
-    builder.create_training_example()
-    dataset = builder.prepare_dataset()
-    logger.info(f"Dataset ready with {len(dataset)} examples")
+    #builder.create_training_example()
+    #dataset = builder.prepare_dataset()
+    #logger.info(f"Dataset ready with {len(dataset)} examples")
+    builder.wiqiSQL_dataset(max_examples=5, use_schema=True)
     
-    
+    for i in range(3):
+        print(f"example{i+1}");
+        print(builder.examples[i]["input"])
+        print("\n")
+        print(builder.examples[i]["output"])
+        print("\n")
+    logger.info(f"Total examples loaded:{len(builder.examples)}")
