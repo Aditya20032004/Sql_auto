@@ -25,7 +25,7 @@ def main():
     builder = SQLDatasetBuilder()
     # builder.spider_dataset(max_examples=8000)
 
-    builder.wiqiSQL_dataset(max_examples=10000,use_schema=True)
+    builder.wiqiSQL_dataset(max_examples=56355,use_schema=True)
     dataset = builder.save_dataset(output_path="data/processed/wikisql_dataset")
     
     logger.info("Dataset saved..now starting training...")
@@ -34,13 +34,13 @@ def main():
                            dataset_path="data/processed/wikisql_dataset")
     
     early = tf.keras.callbacks.EarlyStopping(monitor = 'loss',
-                                             patience =3,
+                                             patience =5,
                                              restore_best_weights = True,
                                              verbose =1,)
     
     history = trainer.train(epochs=20,
                             lr = 0.00015,
-                            batch_size=1,
+                            batch_size=2,
                             callbacks = [early]
                             )
     logger.info("Training completed..now saving the model")

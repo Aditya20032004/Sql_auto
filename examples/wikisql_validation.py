@@ -6,12 +6,28 @@ import glob
 from src.model_loader import CodeGenerationModel
 from src.core.logger import setup_logger
 from difflib import SequenceMatcher
+import re
 
 logger = setup_logger(__name__)
 
 def similarity(str1,str2):
     return SequenceMatcher(None,str1.lower(), str2.lower()).ratio()
     
+def normalization(sql):
+    sql = sql.strip().lower()   
+    sql = re.sub(r'\s+', ' ', sql)
+    sql = re.sub(r'\s*,\s*', ', ', sql)
+    sql = re.sub(r'\s*=\s*', ' = ', sql)
+    sql = sql.replace("'", '"')
+    return sql
+
+def clean_column_names_in_sql(sql, original_cols):
+    """Replace original column names with cleaned versions in SQL"""
+    for original_col in original_cols:
+        clean_col = original_col.replace(' ', '_').replace('/', '_')
+        # Use word boundaries to avoid partial replacements
+        sql = re.sub(r'\b' + re.escape(original_col) + r'\b', clean_col, sql, flags=re.IGNORECASE)
+    return sql
     
     
 def main():
@@ -22,16 +38,17 @@ def main():
     logger.info("LOading model success")
     cache_dir = "/home/aditya/.cache/huggingface/datasets/wikisql/default/0.1.0/*/wikisql-validation.arrow"
     val_file = glob.glob(cache_dir)[0]
-    val_file = Dataset.from_file(val_file)
-    num_examples=15
-    val_file = val_file.select(range(num_examples))
-    logger.info(f"loaded{num_examples} successfully")
+    validation_data = Dataset.from_file(val_file)
+    
+    # Use all validation examples (8421 total)
+    num_examples = len(validation_data)
+    logger.info(f"Loaded {num_examples} validation examples - running on ALL")
     
     logger.info("Genearting code")
     total_similarity = 0
     exact_match = 0
     
-    for i,example in enumerate(val_file):
+    for i,example in enumerate(validation_data):
         tn = example['table']['name']
         col = example['table']['header']
         types = example['table']['types']
@@ -46,18 +63,23 @@ def main():
         
         pred_sql = model.generate(prompt=input_text,max_length=128)
         expected_sql = example['sql']['human_readable']
-        similarity_score = similarity(pred_sql,expected_sql)
-        total_similarity +=similarity_score
         
-        if pred_sql.strip().lower()==expected_sql.strip().lower():
-            exact_match+=1
+        # Clean column names in expected SQL to match our training format
+        expected_sql_cleaned = clean_column_names_in_sql(expected_sql, col)
+        
+        similarity_score = similarity(pred_sql, expected_sql_cleaned)
+        total_similarity += similarity_score
+        
+        if normalization(pred_sql) == normalization(expected_sql_cleaned):
+            exact_match += 1
         if i<5:
             logger.info(f"\n{'=='*25}")
             logger.info(f"example{i+1}")
             logger.info(f"Question: {example['question']}")
-            logger.info(f"Expected: {expected_sql}")
+            logger.info(f"Expected (original): {expected_sql}")
+            logger.info(f"Expected (cleaned): {expected_sql_cleaned}")
             logger.info(f"Predicted: {pred_sql}")
-            logger.info(f"Similarity: {similarity_score*100:2f}%")
+            logger.info(f"Similarity: {similarity_score*100:.2f}%")
         
     avg_similarity = (total_similarity/num_examples)*100
     avg_exact_match = (exact_match/num_examples)*100
