@@ -40,7 +40,7 @@ def main():
     
     history = trainer.train(epochs=20,
                             lr = 0.00015,
-                            batch_size=2,
+                            batch_size=1,
                             callbacks = [early]
                             )
     logger.info("Training completed..now saving the model")

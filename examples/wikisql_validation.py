@@ -72,14 +72,13 @@ def main():
         
         if normalization(pred_sql) == normalization(expected_sql_cleaned):
             exact_match += 1
-        if i<5:
-            logger.info(f"\n{'=='*25}")
-            logger.info(f"example{i+1}")
-            logger.info(f"Question: {example['question']}")
-            logger.info(f"Expected (original): {expected_sql}")
-            logger.info(f"Expected (cleaned): {expected_sql_cleaned}")
-            logger.info(f"Predicted: {pred_sql}")
-            logger.info(f"Similarity: {similarity_score*100:.2f}%")
+        logger.info(f"\n{'=='*25}")
+        logger.info(f"example{i+1}")
+        logger.info(f"Question: {example['question']}")
+        logger.info(f"Expected (original): {expected_sql}")
+        logger.info(f"Expected (cleaned): {expected_sql_cleaned}")
+        logger.info(f"Predicted: {pred_sql}")
+        logger.info(f"Similarity: {similarity_score*100:.2f}%")
         
     avg_similarity = (total_similarity/num_examples)*100
     avg_exact_match = (exact_match/num_examples)*100

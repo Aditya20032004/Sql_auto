@@ -22,7 +22,10 @@ class CodeGenerationModel:
         )
         outputs = self.model.generate(
             inputs["input_ids"],
-            max_length=max_length,temperature=0.3,            
+            max_length=max_length,
+            num_beams=3,         
+            early_stopping=True,   # Stop ALL PATHS
+            no_repeat_ngram_size=2,  # Prevent repetition like SELCT SELECT
         )
         code = self.tokenizer.decode(outputs[0],skip_special_tokens=True)
         logger.info(f"Generated code: {code}")
