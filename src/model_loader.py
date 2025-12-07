@@ -23,7 +23,7 @@ class CodeGenerationModel:
         outputs = self.model.generate(
             inputs["input_ids"],
             max_length=max_length,
-            num_beams=3,         
+            num_beams=5,     # with 3, this issue:    Expected:  Galatasaray ✅;Predicted: Galasaray   ❌ (missing 't') 
             early_stopping=True,   # Stop ALL PATHS
             no_repeat_ngram_size=2,  # Prevent repetition like SELCT SELECT
         )

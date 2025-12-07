@@ -27,9 +27,12 @@ class ModelTrainer:
             return 
         logger.info(f"starting training for {epochs} epochs with lr {lr} and batch size {batch_size}")
         
-        optimizer = tf.keras.optimizers.Adam(lr=lr)
+        optimizer = tf.keras.optimizers.Adam(
+            learning_rate=lr,
+            clipnorm=1.0  # Gradient clipping to prevent explosion
+        )
         self.model.compile(optimizer=optimizer)
-        logger.info("Model compiled successfully")
+        logger.info("Model compiled successfully with gradient clipping")
         
         logger.info("converting data into tf format")
         tf_dataset = self.model.prepare_tf_dataset(

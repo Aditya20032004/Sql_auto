@@ -14,7 +14,22 @@ def similarity(str1,str2):
     return SequenceMatcher(None,str1.lower(), str2.lower()).ratio()
     
 def normalization(sql):
-    sql = sql.strip().lower()   
+    sql = sql.strip().lower()
+    
+    # Normalize column name formats: convert slashes and spaces to underscores
+    # This handles: "2010/ 11" → "2010_11", "School/Club Team" → "School_Club_Team"
+    sql = re.sub(r'(\w+)\s*/\s*(\w+)', r'\1_\2', sql)  # Handle "2010 / 11" or "2010/11"
+    sql = re.sub(r'(\w+)/(\w+)', r'\1_\2', sql)        # Handle remaining slashes
+    
+    # Normalize date formats: remove extra spaces around hyphens and standardize abbreviations
+    # This handles: "19- sept-2006" → "19-sep-2006", "oct." → "oct"
+    sql = re.sub(r'\s*-\s*', '-', sql)  # Remove spaces around hyphens
+    sql = re.sub(r'\.', '', sql)  # Remove periods (e.g., "oct." → "oct", "8," → "8")
+    sql = re.sub(r'sept', 'sep', sql)  # Standardize September abbreviation
+    
+    # Fix missing spaces after SQL keywords
+    sql = re.sub(r'(select|from|where|and|or|count|sum|avg|max|min|group|order|by|having|limit)([a-z])', r'\1 \2', sql, flags=re.IGNORECASE)
+    
     sql = re.sub(r'\s+', ' ', sql)
     sql = re.sub(r'\s*,\s*', ', ', sql)
     sql = re.sub(r'\s*=\s*', ' = ', sql)
@@ -35,7 +50,7 @@ def main():
     
     model = CodeGenerationModel(model_name_or_path="models/trained_wikisql_model")
     
-    logger.info("LOading model success")
+    logger.info("Loading model success")
     cache_dir = "/home/aditya/.cache/huggingface/datasets/wikisql/default/0.1.0/*/wikisql-validation.arrow"
     val_file = glob.glob(cache_dir)[0]
     validation_data = Dataset.from_file(val_file)
@@ -64,19 +79,25 @@ def main():
         pred_sql = model.generate(prompt=input_text,max_length=128)
         expected_sql = example['sql']['human_readable']
         
-        # Clean column names in expected SQL to match our training format
-        expected_sql_cleaned = clean_column_names_in_sql(expected_sql, col)
-        
-        similarity_score = similarity(pred_sql, expected_sql_cleaned)
+        # Compare with original column names (model predicts original)
+        similarity_score = similarity(pred_sql, expected_sql)
         total_similarity += similarity_score
         
-        if normalization(pred_sql) == normalization(expected_sql_cleaned):
+        # OPTION 1: Compare original with original (currently active)
+        if normalization(pred_sql) == normalization(expected_sql):
             exact_match += 1
+        
+        # OPTION 2: Clean expected SQL to match cleaned predictions (commented for future use)
+        # expected_sql_cleaned = clean_column_names_in_sql(expected_sql, col)
+        # similarity_score = similarity(pred_sql, expected_sql_cleaned)
+        # if normalization(pred_sql) == normalization(expected_sql_cleaned):
+        #     exact_match += 1
+        
         logger.info(f"\n{'=='*25}")
         logger.info(f"example{i+1}")
         logger.info(f"Question: {example['question']}")
-        logger.info(f"Expected (original): {expected_sql}")
-        logger.info(f"Expected (cleaned): {expected_sql_cleaned}")
+        logger.info(f"Expected: {expected_sql}")
+        # logger.info(f"Expected (cleaned): {expected_sql_cleaned}")  # Uncomment if using OPTION 2
         logger.info(f"Predicted: {pred_sql}")
         logger.info(f"Similarity: {similarity_score*100:.2f}%")
         

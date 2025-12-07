@@ -39,7 +39,7 @@ def main():
                                              verbose =1,)
     
     history = trainer.train(epochs=20,
-                            lr = 0.00015,
+                            lr = 0.0001,  # Middle ground: 0.00005 too low, 0.00015 too high
                             batch_size=1,
                             callbacks = [early]
                             )
