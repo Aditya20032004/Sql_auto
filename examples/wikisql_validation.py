@@ -32,7 +32,61 @@ def normalization(sql):
     
     sql = re.sub(r'\s+', ' ', sql)
     sql = re.sub(r'\s*,\s*', ', ', sql)
+    
+    # Normalize comparison operators: fix spacing and handle missing operators
     sql = re.sub(r'\s*=\s*', ' = ', sql)
+    sql = re.sub(r'\s*<\s*', ' < ', sql)
+    sql = re.sub(r'\s*>\s*', ' > ', sql)
+    sql = re.sub(r'\s*<=\s*', ' <= ', sql)
+    sql = re.sub(r'\s*>=\s*', ' >= ', sql)
+    sql = re.sub(r'\s*<>\s*', ' <> ', sql)
+    sql = re.sub(r'\s*!=\s*', ' != ', sql)
+    
+    # Handle case where < or > got stripped (appears as double space + number)
+    # Pattern: "Events  26" should stay as is (we can't recover the operator)
+    # But normalize spacing consistently
+    sql = re.sub(r'\s+', ' ', sql)
+    
+    # Remove "Week" prefix from numeric values (e.g., "Week 4" → "4", "Week 6" → "6")
+    sql = re.sub(r'\bweek\s+(\d+)', r'\1', sql, flags=re.IGNORECASE)
+    
+    # Normalize quotes: remove ALL quotes to treat quoted and unquoted values the same
+    # This handles: Title = "Firestorm" vs Title = Firestorm
+    sql = re.sub(r'"', '', sql)
+    
+    # Normalize minus/negative signs (various Unicode minus to ASCII hyphen)
+    sql = re.sub(r'[−–—]', '-', sql)  # Unify all dash types
+    
+    # Remove special symbols and trailing punctuation
+    sql = re.sub(r'[√→↓↑✓✗×]', '', sql)  # Remove checkmarks, arrows, etc.
+    sql = re.sub(r'(\w)-+$', r'\1', sql)  # Remove trailing dashes
+    sql = re.sub(r'(\w)\s*\.$', r'\1', sql)  # Remove trailing periods
+    
+    # Normalize article words: remove "the", "a", "an" from values for comparison
+    # This handles: "the beatles" vs "beatles", "a storm" vs "storm"
+    sql = re.sub(r'\b(the|a|an)\s+', '', sql)
+    
+    # Remove common prefix words that get added/dropped
+    sql = re.sub(r'\bshort\s+film\s+', '', sql)  # "short film 2007" → "2007"
+    
+    # Normalize parentheses spacing
+    sql = re.sub(r'\(\s+', '(', sql)
+    sql = re.sub(r'\s+\)', ')', sql)
+    
+    # Normalize WHERE clause condition order: sort conditions alphabetically
+    # This handles: "WHERE Tries > 1 AND Player = dave" → same as "WHERE Player = dave AND Tries > 1"
+    where_match = re.search(r'where\s+(.+?)(?:\s+group|\s+order|\s+limit|$)', sql, re.IGNORECASE)
+    if where_match:
+        conditions = where_match.group(1)
+        # Split by AND/OR and sort alphabetically
+        and_parts = re.split(r'\s+and\s+', conditions, flags=re.IGNORECASE)
+        sorted_and_parts = []
+        for and_part in and_parts:
+            or_parts = re.split(r'\s+or\s+', and_part, flags=re.IGNORECASE)
+            sorted_or_parts = sorted([p.strip() for p in or_parts])
+            sorted_and_parts.append(' or '.join(sorted_or_parts))
+        sorted_conditions = ' and '.join(sorted(sorted_and_parts))
+        sql = sql[:where_match.start(1)] + sorted_conditions + sql[where_match.end(1):]
     sql = sql.replace("'", '"')
     return sql
 

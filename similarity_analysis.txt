@@ -1,0 +1,300 @@
+2025-12-07 19:47:28 - __main__ - INFO - Expected: SELECT COUNT Final Episode Count FROM table WHERE Character = Rick Stetler
+2025-12-07 19:47:28 - __main__ - INFO - Predicted: SELECT COUNT Final Episode Count FROM table WHERE Character = Rick Stenberg
+2025-12-07 19:47:28 - __main__ - INFO - Similarity: 96.64%
+2025-12-07 19:47:31 - __main__ - INFO - Expected: SELECT Actor FROM table WHERE First Episode = "Ambush"
+2025-12-07 19:47:31 - __main__ - INFO - Predicted: SELECT Actor FROM table WHERE First Episode = Ambush
+2025-12-07 19:47:31 - __main__ - INFO - Similarity: 98.11%
+2025-12-07 19:47:34 - __main__ - INFO - Expected: SELECT Character FROM table WHERE Fate = Deceased: Knife Wound
+2025-12-07 19:47:34 - __main__ - INFO - Predicted: SELECT Character FROM table WHERE Fate = Decreased: Knife wound
+2025-12-07 19:47:34 - __main__ - INFO - Similarity: 99.20%
+2025-12-07 19:47:37 - __main__ - INFO - Expected: SELECT COUNT Final Episode Count FROM table WHERE First Episode = "L.A."
+2025-12-07 19:47:37 - __main__ - INFO - Predicted: SELECT COUNT Final Episode Count FROM table WHERE First Episode = L.A.
+2025-12-07 19:47:37 - __main__ - INFO - Similarity: 98.59%
+2025-12-07 19:47:42 - __main__ - INFO - Expected: SELECT First Episode FROM table WHERE Final Episode = "Rio"
+2025-12-07 19:47:42 - __main__ - INFO - Predicted: SELECT First Episode FROM table WHERE Final Episode = Rio
+2025-12-07 19:47:42 - __main__ - INFO - Similarity: 98.28%
+2025-12-07 19:47:49 - __main__ - INFO - Expected: SELECT COUNT Runner-Up FROM table WHERE Semi-Finalist #1 = Western Carolina AND Year = 2005
+2025-12-07 19:47:49 - __main__ - INFO - Predicted: SELECT COUNT Runner-Up FROM table WHERE Year = 2005 AND Semi-Finalist #1 = Western Carolina
+2025-12-07 19:47:49 - __main__ - INFO - Similarity: 82.42%
+2025-12-07 19:48:04 - __main__ - INFO - Expected: SELECT COUNT Round FROM table WHERE Pole Position = Michael Schumacher AND Fastest Lap = David Coulthard AND Winning Constructor = McLaren - Mercedes
+2025-12-07 19:48:04 - __main__ - INFO - Predicted: SELECT Round FROM table WHERE Pole Position = Michael Schumacher AND Fastest Lap = David Coulthard AND Winning Constructor = McLaren - Mercedes
+2025-12-07 19:48:04 - __main__ - INFO - Similarity: 97.95%
+2025-12-07 19:48:21 - __main__ - INFO - Expected: SELECT Successor FROM table WHERE Vacator = Chester E. Holifield (D)
+2025-12-07 19:48:21 - __main__ - INFO - Predicted: SELECT Successor FROM table WHERE Vacator = Chester E. Holmes (D)
+2025-12-07 19:48:21 - __main__ - INFO - Similarity: 94.74%
+2025-12-07 19:48:36 - __main__ - INFO - Expected: SELECT Junctions FROM table WHERE Remarks = Replaced by BSI-35
+2025-12-07 19:48:36 - __main__ - INFO - Predicted: SELECT Junctions FROM table WHERE Remarks = Replaced by BMI-35
+2025-12-07 19:48:36 - __main__ - INFO - Similarity: 98.39%
+2025-12-07 19:48:40 - __main__ - INFO - Expected: SELECT COUNT Junctions FROM table WHERE Remarks = Replaced by BSI-35
+2025-12-07 19:48:40 - __main__ - INFO - Predicted: SELECT COUNT Junctions FROM table WHERE Remarks = Replaced by BMI-35
+2025-12-07 19:48:40 - __main__ - INFO - Similarity: 98.53%
+2025-12-07 19:48:51 - __main__ - INFO - Expected: SELECT COUNT Termini FROM table WHERE Direction = East West AND Junctions = none AND Route Name = SH 202
+2025-12-07 19:48:51 - __main__ - INFO - Predicted: SELECT COUNT Termini FROM table WHERE Direction = East West AND Junctions = None AND Route Name =  SH 202
+2025-12-07 19:48:51 - __main__ - INFO - Similarity: 99.52%
+2025-12-07 19:49:10 - __main__ - INFO - Expected: SELECT Runner(s)-up FROM table WHERE 54 holes = Tied for lead AND Margin = 5 strokes
+2025-12-07 19:49:10 - __main__ - INFO - Predicted: SELECT Runner(s)-up FROM table WHERE 54 holes = Lead AND Margin = 5 strokes
+2025-12-07 19:49:10 - __main__ - INFO - Similarity: 94.34%
+2025-12-07 19:49:19 - __main__ - INFO - Expected: SELECT MIN Year FROM table WHERE Winning score = −8 (71-63-69-69=272)
+2025-12-07 19:49:19 - __main__ - INFO - Predicted: SELECT MIN Year FROM table WHERE Winning score = 8 (71-63-69-69=272)
+2025-12-07 19:49:19 - __main__ - INFO - Similarity: 99.27%
+2025-12-07 19:49:23 - __main__ - INFO - Expected: SELECT Championship FROM table WHERE Winning score = −12 (74-66-65-71=276)
+2025-12-07 19:49:23 - __main__ - INFO - Predicted: SELECT Championship FROM table WHERE Winning score = 12 (74-66-65-71=276)
+2025-12-07 19:49:23 - __main__ - INFO - Similarity: 99.32%
+2025-12-07 19:49:27 - __main__ - INFO - Expected: SELECT 54 holes FROM table WHERE Winning score = −19 (67-66-67-69=269)
+2025-12-07 19:49:27 - __main__ - INFO - Predicted: SELECT 54 holes FROM table WHERE Winning score = 19 (67-66-67 69=269)
+2025-12-07 19:49:27 - __main__ - INFO - Similarity: 97.84%
+2025-12-07 19:50:08 - __main__ - INFO - Expected: SELECT permanence of the body FROM table WHERE constancy = interestedness
+2025-12-07 19:50:08 - __main__ - INFO - Predicted: SELECT permanence of the body FROM table WHERE constancy =Interestedness
+2025-12-07 19:50:08 - __main__ - INFO - Similarity: 99.31%
+2025-12-07 19:50:10 - __main__ - INFO - Expected: SELECT Original air date FROM table WHERE Title = "Firestorm"
+2025-12-07 19:50:10 - __main__ - INFO - Predicted: SELECT Original air date FROM table WHERE Title = " Firestorm"
+2025-12-07 19:50:10 - __main__ - INFO - Similarity: 99.19%
+2025-12-07 19:50:21 - __main__ - INFO - Expected: SELECT COUNT Species in the Peruvian Amazon FROM table WHERE Species in the world = 8411
+2025-12-07 19:50:21 - __main__ - INFO - Predicted: SELECT COUNT Peruvian Amazon Vs. Percent) FROM table WHERE Species in the world = 8411
+2025-12-07 19:50:21 - __main__ - INFO - Similarity: 83.91%
+2025-12-07 19:50:26 - __main__ - INFO - Expected: SELECT MIN Species in the Peruvian Amazon FROM table WHERE Taxonomy = s Fern ( Pteridophyta )
+2025-12-07 19:50:26 - __main__ - INFO - Predicted: SELECT MIN Species in the Peruvian Amazon FROM table WHERE Taxonomy = S Fern ( Pteri)
+2025-12-07 19:50:26 - __main__ - INFO - Similarity: 95.51%
+2025-12-07 19:50:31 - __main__ - INFO - Expected: SELECT Species in the world FROM table WHERE Peruvian Amazon Vs. Peru (Percent) = 63
+2025-12-07 19:50:31 - __main__ - INFO - Predicted: SELECT Species in the world FROM table WHERE Peruvian Amazon Vs. Peru ( Percent) = 63
+2025-12-07 19:50:31 - __main__ - INFO - Similarity: 99.41%
+2025-12-07 19:50:35 - __main__ - INFO - Expected: SELECT MIN Species in the Peruvian Amazon FROM table WHERE Species in Peru = 1000
+2025-12-07 19:50:35 - __main__ - INFO - Predicted: SELECT MIN Species in the Peruvian Amazon FROM table WHERE MAX
+2025-12-07 19:50:35 - __main__ - INFO - Similarity: 82.52%
+2025-12-07 19:50:40 - __main__ - INFO - Expected: SELECT MIN Species in the Peruvian Amazon FROM table WHERE Peru Vs. world (Percent) = 7
+2025-12-07 19:50:40 - __main__ - INFO - Predicted: SELECT MIN Species in the Peruvian Amazon FROM table WHERE Peru Vs. world Percent) = 1.3
+2025-12-07 19:50:40 - __main__ - INFO - Similarity: 97.14%
+2025-12-07 19:51:06 - __main__ - INFO - Expected: SELECT No.(s) FROM table WHERE School/Club Team/Country = Southern University
+2025-12-07 19:51:06 - __main__ - INFO - Predicted: SELECT No.(s) FROM table WHERE School/Club Team/Country = Southern
+2025-12-07 19:51:06 - __main__ - INFO - Similarity: 92.31%
+2025-12-07 19:51:15 - __main__ - INFO - Expected: SELECT Week Sent To Third Island FROM table WHERE Week Arrived On Main Island = 6
+2025-12-07 19:51:15 - __main__ - INFO - Predicted: SELECT Week sent to Third Island FROM table WHERE Week Arrived On Main Island = Week 6
+2025-12-07 19:51:15 - __main__ - INFO - Similarity: 97.01%
+2025-12-07 19:51:19 - __main__ - INFO - Expected: SELECT COUNT Member FROM table WHERE Week Arrived On Main Island = 4
+2025-12-07 19:51:19 - __main__ - INFO - Predicted: SELECT COUNT Member FROM table WHERE Week Arrived On Main Island = Week 4
+2025-12-07 19:51:19 - __main__ - INFO - Similarity: 96.45%
+2025-12-07 19:51:23 - __main__ - INFO - Expected: SELECT Week Arrived On Main Island FROM table WHERE Original Tribe = Shark AND Week Sent To Third Island = 14
+2025-12-07 19:51:23 - __main__ - INFO - Predicted: SELECT Week Arrived On Main Island FROM table WHERE Original tribal = Shark AND Week Sent To Third Island = Week 14
+2025-12-07 19:51:23 - __main__ - INFO - Similarity: 96.43%
+2025-12-07 19:51:34 - __main__ - INFO - Expected: SELECT Country FROM table WHERE Interview = 9.40 AND Average = 9.44
+2025-12-07 19:51:34 - __main__ - INFO - Predicted: SELECT Country FROM table WHERE Interview = 9.40
+2025-12-07 19:51:34 - __main__ - INFO - Similarity: 83.48%
+2025-12-07 19:52:05 - __main__ - INFO - Expected: SELECT COUNT Date FROM table WHERE Leading scorer = Gordon : 32
+2025-12-07 19:52:05 - __main__ - INFO - Predicted: SELECT COUNT Date FROM table WHERE Score = Gordon : 32
+2025-12-07 19:52:05 - __main__ - INFO - Similarity: 92.31%
+2025-12-07 19:52:42 - __main__ - INFO - Expected: SELECT MAX Season # FROM table WHERE Title = "When Worlds Collide"
+2025-12-07 19:52:42 - __main__ - INFO - Predicted: SELECT MIN Season # FROM table WHERE Title = "When Worlds Collide"
+2025-12-07 19:52:42 - __main__ - INFO - Similarity: 96.97%
+2025-12-07 19:52:48 - __main__ - INFO - Expected: SELECT Bristol & N. Som FROM table WHERE Somerset = Ashcott and Shapwick
+2025-12-07 19:52:48 - __main__ - INFO - Predicted: SELECT Bristol & N. Som FROM table WHERE Somerset = Ashcott and Shacklet
+2025-12-07 19:52:48 - __main__ - INFO - Similarity: 95.83%
+2025-12-07 19:52:55 - __main__ - INFO - Expected: SELECT Glos & Wilts FROM table WHERE Bristol & Somerset = Lansdown
+2025-12-07 19:52:55 - __main__ - INFO - Predicted: SELECT Glos & Wilts FROM table WHERE Gloucestershire = Lansdown
+2025-12-07 19:52:55 - __main__ - INFO - Similarity: 83.72%
+2025-12-07 19:53:01 - __main__ - INFO - Expected: SELECT COUNT Premier Two FROM table WHERE Gloucestershire = Painswick
+2025-12-07 19:53:01 - __main__ - INFO - Predicted: SELECT COUNT Somerset FROM table WHERE Gloucestershire = Painswick
+2025-12-07 19:53:01 - __main__ - INFO - Similarity: 91.85%
+2025-12-07 19:53:15 - __main__ - INFO - Expected: SELECT Evening Gown FROM table WHERE State = South Dakota
+2025-12-07 19:53:15 - __main__ - INFO - Predicted: SELECT Evening Gown FROM table WHERE State = Saskatchewan
+2025-12-07 19:53:15 - __main__ - INFO - Similarity: 85.96%
+2025-12-07 19:53:18 - __main__ - INFO - Expected: SELECT COUNT Average FROM table WHERE Evening Gown = 8.988
+2025-12-07 19:53:18 - __main__ - INFO - Predicted: SELECT Total FROM table WHERE Evening Gown = 8.988
+2025-12-07 19:53:18 - __main__ - INFO - Similarity: 87.04%
+2025-12-07 19:53:22 - __main__ - INFO - Expected: SELECT Mens singles FROM table WHERE Womens doubles = Marina Yakusheva Elena Shimko
+2025-12-07 19:53:22 - __main__ - INFO - Predicted: SELECT Mens singles FROM table WHERE Womens doubles = marina Yakushevaelena Shinko
+2025-12-07 19:53:22 - __main__ - INFO - Similarity: 98.18%
+2025-12-07 19:53:27 - __main__ - INFO - Expected: SELECT Womens singles FROM table WHERE Mens doubles = Imam Sodikin Irawan Andi Tandaputra
+2025-12-07 19:53:27 - __main__ - INFO - Predicted: SELECT Womens singles FROM table WHERE Mens doubles = Imam Sodikin Irawan andi Sandaputra
+2025-12-07 19:53:27 - __main__ - INFO - Similarity: 98.88%
+2025-12-07 19:53:31 - __main__ - INFO - Expected: SELECT Womens singles FROM table WHERE Womens doubles = Naoko Fukuman Kurumi Yonao
+2025-12-07 19:53:31 - __main__ - INFO - Predicted: SELECT Womens singles FROM table WHERE Mixed doubles = Naoko Fukuman Kurumi Yonao
+2025-12-07 19:53:31 - __main__ - INFO - Similarity: 95.71%
+2025-12-07 19:53:35 - __main__ - INFO - Expected: SELECT Womens singles FROM table WHERE Mixed doubles = Marcus Ellis Gabrielle White
+2025-12-07 19:53:35 - __main__ - INFO - Predicted: SELECT Womens singles FROM table WHERE Mens doubles = Marcus Ellis Gabrielle White
+2025-12-07 19:53:35 - __main__ - INFO - Similarity: 96.97%
+2025-12-07 19:53:44 - __main__ - INFO - Expected: SELECT Population FROM table WHERE Area (sq. mi.) = Area (sq. mi.)
+2025-12-07 19:53:44 - __main__ - INFO - Predicted: SELECT Population FROM table WHERE Area (sq. mi.) = a
+2025-12-07 19:53:44 - __main__ - INFO - Similarity: 89.08%
+2025-12-07 19:53:48 - __main__ - INFO - Expected: SELECT Light vehicle FROM table WHERE Heavy vehicle (2 axles) = R87.00
+2025-12-07 19:53:48 - __main__ - INFO - Predicted: SELECT Light Vehicle FROM table WHERE Location = plaza AND Heavy Vehicle (2 axles) = R87.00
+2025-12-07 19:53:48 - __main__ - INFO - Similarity: 86.96%
+2025-12-07 19:53:52 - __main__ - INFO - Expected: SELECT Name FROM table WHERE Heavy vehicle (2 axles) = R87.00
+2025-12-07 19:53:52 - __main__ - INFO - Predicted: SELECT Name FROM table WHERE Heavy Vehicle (2 axles) = R87.00 AND Location = Plaza
+2025-12-07 19:53:52 - __main__ - INFO - Similarity: 85.31%
+2025-12-07 19:54:03 - __main__ - INFO - Expected: SELECT Light vehicle FROM table WHERE Location = between Bela Bela and Modimolle
+2025-12-07 19:54:03 - __main__ - INFO - Predicted: SELECT Light Vehicle FROM table WHERE Location = the plaza between Bela and Modimolle
+2025-12-07 19:54:03 - __main__ - INFO - Similarity: 90.91%
+2025-12-07 19:54:07 - __main__ - INFO - Expected: SELECT Name FROM table WHERE Heavy vehicle (2 axles) = R20.50
+2025-12-07 19:54:07 - __main__ - INFO - Predicted: SELECT Name FROM table WHERE Heavy vehicles (2 axles) = R20.50
+2025-12-07 19:54:07 - __main__ - INFO - Similarity: 99.19%
+2025-12-07 19:54:14 - __main__ - INFO - Expected: SELECT MAX Apogee (km) FROM table WHERE Name = SAMOS F3-3
+2025-12-07 19:54:14 - __main__ - INFO - Predicted: SELECT MAX Apogee (km) FROM table WHERE Alt name = Sanos F3-3
+2025-12-07 19:54:14 - __main__ - INFO - Similarity: 94.92%
+2025-12-07 19:54:21 - __main__ - INFO - Expected: SELECT COUNT Alt name FROM table WHERE ID = 1964-011A
+2025-12-07 19:54:21 - __main__ - INFO - Predicted: SELECT COUNT Alt name FROM table WHERE Name = 1964-011A
+2025-12-07 19:54:21 - __main__ - INFO - Similarity: 94.44%
+2025-12-07 19:54:25 - __main__ - INFO - Expected: SELECT Shortstop FROM table WHERE First Baseman = Paul Konerko
+2025-12-07 19:54:25 - __main__ - INFO - Predicted: SELECT Catcher FROM table WHERE First Baseman = Paul Konerko
+2025-12-07 19:54:25 - __main__ - INFO - Similarity: 88.52%
+2025-12-07 19:54:28 - __main__ - INFO - Expected: SELECT Second Baseman FROM table WHERE First Baseman = Nomar Garciaparra
+2025-12-07 19:54:28 - __main__ - INFO - Predicted: SELECT Second Baseman FROM table WHERE Centerfielder = Nomar Garciaparra
+2025-12-07 19:54:28 - __main__ - INFO - Similarity: 86.11%
+2025-12-07 19:54:31 - __main__ - INFO - Expected: SELECT Rightfielder FROM table WHERE Starting Pitcher = Vicente Padilla
+2025-12-07 19:54:31 - __main__ - INFO - Predicted: SELECT Catcher FROM table WHERE First Baseman = Vicente Padilla
+2025-12-07 19:54:31 - __main__ - INFO - Similarity: 74.63%
+2025-12-07 19:54:36 - __main__ - INFO - Expected: SELECT Shortstop FROM table WHERE Second Baseman = Jim Lefebvre AND Centerfielder = Willie Davis AND Starting Pitcher = Don Drysdale
+2025-12-07 19:54:36 - __main__ - INFO - Predicted: SELECT Catcher FROM table WHERE Second Baseman = Jim Lefebvre AND Centerfielder = Willow AND Year = 2010
+2025-12-07 19:54:36 - __main__ - INFO - Similarity: 76.27%
+2025-12-07 19:54:41 - __main__ - INFO - Expected: SELECT Goals FROM table WHERE Season = 2005-06
+2025-12-07 19:54:41 - __main__ - INFO - Predicted: SELECT MAX Goals FROM table WHERE Season = 2005-06
+2025-12-07 19:54:41 - __main__ - INFO - Similarity: 95.83%
+2025-12-07 19:54:48 - __main__ - INFO - Expected: SELECT COUNT Rank FROM table WHERE Manager = Rob McDonald
+2025-12-07 19:54:48 - __main__ - INFO - Predicted: SELECT Rank FROM table WHERE Manager = Rob McDonald
+2025-12-07 19:54:48 - __main__ - INFO - Similarity: 94.44%
+2025-12-07 19:55:05 - __main__ - INFO - Expected: SELECT # of seats won FROM table WHERE Election = 1974
+2025-12-07 19:55:05 - __main__ - INFO - Predicted: SELECT MIN # of seats won FROM table WHERE Election = 1974
+2025-12-07 19:55:05 - __main__ - INFO - Similarity: 96.43%
+2025-12-07 19:55:08 - __main__ - INFO - Expected: SELECT COUNT # of seats won FROM table WHERE # of total votes = 2582322
+2025-12-07 19:55:08 - __main__ - INFO - Predicted: SELECT COUNT % of popular vote FROM table WHERE # of total votes = 2582322
+2025-12-07 19:55:08 - __main__ - INFO - Similarity: 85.52%
+2025-12-07 19:55:11 - __main__ - INFO - Expected: SELECT Election FROM table WHERE # of seats won = 65
+2025-12-07 19:55:11 - __main__ - INFO - Predicted: SELECT MIN Election FROM table WHERE # of seats won = 65
+2025-12-07 19:55:11 - __main__ - INFO - Similarity: 96.30%
+2025-12-07 19:55:14 - __main__ - INFO - Expected: SELECT COUNT Election FROM table WHERE # of candidates nominated = 262
+2025-12-07 19:55:14 - __main__ - INFO - Predicted: SELECT MAX Election FROM table WHERE # of candidates nominated = 262
+2025-12-07 19:55:14 - __main__ - INFO - Similarity: 94.20%
+2025-12-07 19:55:24 - __main__ - INFO - Expected: SELECT Strongs Words Compounded FROM table WHERE Strongs Transliteration = Yowyariyb
+2025-12-07 19:55:24 - __main__ - INFO - Predicted: SELECT Strongs Words Compounded FROM table WHERE Highs Transliteration = Yowyariyb
+2025-12-07 19:55:24 - __main__ - INFO - Similarity: 95.18%
+2025-12-07 19:55:33 - __main__ - INFO - Expected: SELECT Strongs Transliteration FROM table WHERE Hebrew word = יוֹחָנָן
+2025-12-07 19:55:33 - __main__ - INFO - Predicted: SELECT Strongs Transliteration FROM table WHERE Hebrew word = 
+2025-12-07 19:55:33 - __main__ - INFO - Similarity: 93.94%
+2025-12-07 19:55:40 - __main__ - INFO - Expected: SELECT DS Division FROM table WHERE Main Town = Kaluvanchikudy
+2025-12-07 19:55:40 - __main__ - INFO - Predicted: SELECT MIN Other FROM table WHERE DS Division = Kaluvanchikud
+2025-12-07 19:55:40 - __main__ - INFO - Similarity: 74.80%
+2025-12-07 19:55:43 - __main__ - INFO - Expected: SELECT DS Division FROM table WHERE Divisional Secretary = S. L. M. Haneefa
+2025-12-07 19:55:43 - __main__ - INFO - Predicted: SELECT DS Division FROM table WHERE GN Divisions = 89
+2025-12-07 19:55:43 - __main__ - INFO - Similarity: 75.00%
+2025-12-07 19:55:55 - __main__ - INFO - Expected: SELECT COUNT U.S. viewers (millions) FROM table WHERE Title = "Buzzkill"
+2025-12-07 19:55:55 - __main__ - INFO - Predicted: SELECT U.S. viewers (millions) FROM table WHERE Title = "Bazzkill"
+2025-12-07 19:55:55 - __main__ - INFO - Similarity: 94.20%
+2025-12-07 19:55:59 - __main__ - INFO - Expected: SELECT COUNT Written by FROM table WHERE U.S. viewers (millions) = 12.72
+2025-12-07 19:55:59 - __main__ - INFO - Predicted: SELECT COUNT No. in season FROM table WHERE U.S. viewers (millions) = 12.72
+2025-12-07 19:55:59 - __main__ - INFO - Similarity: 88.44%
+2025-12-07 19:56:04 - __main__ - INFO - Expected: SELECT U.S. viewers (millions) FROM table WHERE Directed by = Rob Bailey AND Written by = Pam Veasey
+2025-12-07 19:56:04 - __main__ - INFO - Predicted: SELECT COUNT U.S. viewers (millions) FROM table WHERE Directed by = Rob Bailey AND Written By = Pam Veasey
+2025-12-07 19:56:04 - __main__ - INFO - Similarity: 97.09%
+2025-12-07 19:56:26 - __main__ - INFO - Expected: SELECT Short stem FROM table WHERE Imperfect stem = garbitzen
+2025-12-07 19:56:26 - __main__ - INFO - Predicted: SELECT Short stem FROM table WHERE Meaning = garbitzen
+2025-12-07 19:56:26 - __main__ - INFO - Similarity: 85.22%
+2025-12-07 19:56:28 - __main__ - INFO - Expected: SELECT Perfect stem FROM table WHERE Imperfect stem = pozten
+2025-12-07 19:56:28 - __main__ - INFO - Predicted: SELECT Perfect stem FROM table WHERE Short stem = Posten
+2025-12-07 19:56:28 - __main__ - INFO - Similarity: 89.66%
+2025-12-07 19:56:31 - __main__ - INFO - Expected: SELECT COUNT Perfect stem FROM table WHERE Short stem = jo
+2025-12-07 19:56:31 - __main__ - INFO - Predicted: SELECT Perfect stem FROM table WHERE Short stem = Jo
+2025-12-07 19:56:31 - __main__ - INFO - Similarity: 94.55%
+2025-12-07 19:56:34 - __main__ - INFO - Expected: SELECT COUNT Future stem FROM table WHERE Perfect stem = poztu
+2025-12-07 19:56:34 - __main__ - INFO - Predicted: SELECT Future stem FROM table WHERE Imperfect stem = Poztu
+2025-12-07 19:56:34 - __main__ - INFO - Similarity: 93.33%
+2025-12-07 19:56:36 - __main__ - INFO - Expected: SELECT Try bonus FROM table WHERE Points against = 430
+2025-12-07 19:56:36 - __main__ - INFO - Predicted: SELECT Try bonus FROM table WHERE Club = Ruthin RFC
+2025-12-07 19:56:36 - __main__ - INFO - Similarity: 70.48%
+2025-12-07 19:56:39 - __main__ - INFO - Expected: SELECT Losing bonus FROM table WHERE Points = 96
+2025-12-07 19:56:39 - __main__ - INFO - Predicted: SELECT Losing bonus FROM table WHERE Points against = 96
+2025-12-07 19:56:39 - __main__ - INFO - Similarity: 92.31%
+2025-12-07 19:56:41 - __main__ - INFO - Expected: SELECT Points against FROM table WHERE Points = 51
+2025-12-07 19:56:41 - __main__ - INFO - Predicted: SELECT Tries against FROM table WHERE Points = 51
+2025-12-07 19:56:41 - __main__ - INFO - Similarity: 92.93%
+2025-12-07 19:56:44 - __main__ - INFO - Expected: SELECT Tries against FROM table WHERE Points = 87
+2025-12-07 19:56:44 - __main__ - INFO - Predicted: SELECT Tries against FROM table WHERE Points for = 87
+2025-12-07 19:56:44 - __main__ - INFO - Similarity: 96.08%
+2025-12-07 19:56:47 - __main__ - INFO - Expected: SELECT COUNT Tries against FROM table WHERE Drawn = Drawn
+2025-12-07 19:56:47 - __main__ - INFO - Predicted: SELECT Tries against FROM table WHERE Drawn = drawn
+2025-12-07 19:56:47 - __main__ - INFO - Similarity: 94.44%
+2025-12-07 19:56:49 - __main__ - INFO - Expected: SELECT Losing bonus FROM table WHERE Tries for = 27
+2025-12-07 19:56:49 - __main__ - INFO - Predicted: SELECT Losing bonus FROM table WHERE Points against = 27
+2025-12-07 19:56:49 - __main__ - INFO - Similarity: 84.11%
+2025-12-07 19:57:08 - __main__ - INFO - Expected: SELECT COUNT Clubs remaining FROM table WHERE New entries this round = 8
+2025-12-07 19:57:08 - __main__ - INFO - Predicted: SELECT Clubs remaining FROM table WHERE New entries this round = 8
+2025-12-07 19:57:08 - __main__ - INFO - Similarity: 95.65%
+2025-12-07 19:57:11 - __main__ - INFO - Expected: SELECT Winners from previous round FROM table WHERE Phase = First Phase AND Clubs involved = 16
+2025-12-07 19:57:11 - __main__ - INFO - Predicted: SELECT Winners from previous round FROM table WHERE Clubs involved = 16
+2025-12-07 19:57:11 - __main__ - INFO - Similarity: 85.54%
+2025-12-07 19:57:17 - __main__ - INFO - Expected: SELECT Submitting country FROM table WHERE Original title = Miehen työ
+2025-12-07 19:57:17 - __main__ - INFO - Predicted: SELECT Submitting country FROM table WHERE Director(s) = Mikha Työ
+2025-12-07 19:57:17 - __main__ - INFO - Similarity: 80.88%
+2025-12-07 19:57:26 - __main__ - INFO - Expected: SELECT MAX First season FROM table WHERE Institution = University of Saskatchewan
+2025-12-07 19:57:26 - __main__ - INFO - Predicted: SELECT MIN First season FROM table WHERE Institution = University of Saskatchewan
+2025-12-07 19:57:26 - __main__ - INFO - Similarity: 97.53%
+2025-12-07 19:57:35 - __main__ - INFO - Expected: SELECT MAX Enrollment FROM table WHERE Football stadium = Foote Field
+2025-12-07 19:57:35 - __main__ - INFO - Predicted: SELECT MIN Enrollment FROM table WHERE Football stadium = Foote Field
+2025-12-07 19:57:35 - __main__ - INFO - Similarity: 97.10%
+2025-12-07 19:57:37 - __main__ - INFO - Expected: SELECT COUNT City FROM table WHERE Enrollment = 19082
+2025-12-07 19:57:37 - __main__ - INFO - Predicted: SELECT City FROM table WHERE Enrollment = 19082
+2025-12-07 19:57:37 - __main__ - INFO - Similarity: 94.00%
+2025-12-07 19:57:40 - __main__ - INFO - Expected: SELECT COUNT Points FROM table WHERE Country = South Korea
+2025-12-07 19:57:40 - __main__ - INFO - Predicted: SELECT MAX Points FROM table WHERE Country = South Korea
+2025-12-07 19:57:40 - __main__ - INFO - Similarity: 92.98%
+2025-12-07 19:57:46 - __main__ - INFO - Expected: SELECT MAX Stumpings FROM table WHERE Player = Tim Latham
+2025-12-07 19:57:46 - __main__ - INFO - Predicted: SELECT Stumpings FROM table WHERE Player = Tim Latham
+2025-12-07 19:57:46 - __main__ - INFO - Similarity: 96.36%
+2025-12-07 19:57:52 - __main__ - INFO - Expected: SELECT COUNT Innings FROM table WHERE Catches = 2 AND Stumpings = 0
+2025-12-07 19:57:52 - __main__ - INFO - Predicted: SELECT Innings FROM table WHERE Catches = 2 AND Stumpings = 0
+2025-12-07 19:57:52 - __main__ - INFO - Similarity: 95.31%
+2025-12-07 19:58:22 - __main__ - INFO - Expected: SELECT COUNT Results FROM table WHERE Incumbent = Ruben Hinojosa
+2025-12-07 19:58:22 - __main__ - INFO - Predicted: SELECT COUNT District FROM table WHERE Incumbent = Ruben Hinojosa
+2025-12-07 19:58:22 - __main__ - INFO - Similarity: 91.47%
+2025-12-07 19:58:26 - __main__ - INFO - Expected: SELECT District FROM table WHERE Incumbent = Ruben Hinojosa
+2025-12-07 19:58:26 - __main__ - INFO - Predicted: SELECT District FROM table WHERE Incumbent = Rusten Hinojosa
+2025-12-07 19:58:26 - __main__ - INFO - Similarity: 97.48%
+2025-12-07 19:58:28 - __main__ - INFO - Expected: SELECT District FROM table WHERE Incumbent = Nick Lampson
+2025-12-07 19:58:28 - __main__ - INFO - Predicted: SELECT District FROM table WHERE Incumbent = Nick Lampon
+2025-12-07 19:58:28 - __main__ - INFO - Similarity: 99.12%
+2025-12-07 19:58:32 - __main__ - INFO - Expected: SELECT MIN First elected FROM table WHERE Incumbent = Jim McDermott
+2025-12-07 19:58:32 - __main__ - INFO - Predicted: SELECT First elected FROM table WHERE Incumbent = Jim McDermott
+2025-12-07 19:58:32 - __main__ - INFO - Similarity: 96.92%
+2025-12-07 19:58:37 - __main__ - INFO - Expected: SELECT Status FROM table WHERE Opponent = Doc Hastings (R) 53.3% Jay Inslee (D) 46.7%
+2025-12-07 19:58:37 - __main__ - INFO - Predicted: SELECT Status FROM table WHERE Incumbent = Doc Hastings (R) 53.3% Jay Inslee (D) 46.7%
+2025-12-07 19:58:37 - __main__ - INFO - Similarity: 94.74%
+2025-12-07 19:58:44 - __main__ - INFO - Expected: SELECT Champions FROM table WHERE First driver(s) = Hiroki Yoshimoto ( 2005 )
+2025-12-07 19:58:44 - __main__ - INFO - Predicted: SELECT COUNT Champions FROM table WHERE First driver(s) = Höroki Yoshimoto ( 2005 )
+2025-12-07 19:58:44 - __main__ - INFO - Similarity: 95.00%
+2025-12-07 19:58:49 - __main__ - INFO - Expected: SELECT Total Drivers FROM table WHERE Last/Current driver(s) September 22, 2013 = Gianmarco Raimondo
+2025-12-07 19:58:49 - __main__ - INFO - Predicted: SELECT COUNT Total Drivers FROM table WHERE Last Driver(s) September 22, 2013 = Gianmarco Raimondo
+2025-12-07 19:58:49 - __main__ - INFO - Similarity: 92.93%
+2025-12-07 19:58:54 - __main__ - INFO - Expected: SELECT Champions FROM table WHERE Last/Current driver(s) September 22, 2013 = Vladimir Arabadzhiev ( 2010 )
+2025-12-07 19:58:54 - __main__ - INFO - Predicted: SELECT COUNT Champions FROM table WHERE Last Current driver(s) September 22, 2013 = Vladimir, Adzhiev ( 2010 )
+2025-12-07 19:58:54 - __main__ - INFO - Similarity: 94.01%
+2025-12-07 19:59:02 - __main__ - INFO - Expected: SELECT Champions FROM table WHERE Last/Current driver(s) September 22, 2013 = Gianmarco Raimondo
+2025-12-07 19:59:02 - __main__ - INFO - Predicted: SELECT COUNT Champions FROM table WHERE Last Current driver(s) September 22, 2013 = Gianmarco Raimondo
+2025-12-07 19:59:02 - __main__ - INFO - Similarity: 95.96%
+2025-12-07 19:59:22 - __main__ - INFO - Expected: SELECT COUNT Result FROM table WHERE District = Florida 14
+2025-12-07 19:59:22 - __main__ - INFO - Predicted: SELECT COUNT Results FROM table WHERE District = Florida 14
+2025-12-07 19:59:22 - __main__ - INFO - Similarity: 99.15%
+2025-12-07 19:59:35 - __main__ - INFO - Expected: SELECT Party FROM table WHERE Candidates = Newt Gingrich (R) 59.1% Dock H. Davis (D) 40.9%
+2025-12-07 19:59:35 - __main__ - INFO - Predicted: SELECT Party FROM table WHERE Candidates = Newt Grich (R) 59.1% Dock H. Davis (D) 40.9%
+2025-12-07 19:59:35 - __main__ - INFO - Similarity: 98.31%
+2025-12-07 19:59:43 - __main__ - INFO - Expected: SELECT COUNT Party FROM table WHERE Candidates = Newt Gingrich (R) 59.1% Dock H. Davis (D) 40.9%
+2025-12-07 19:59:43 - __main__ - INFO - Predicted: SELECT COUNT Party FROM table WHERE Candidates = Newt Grich (R) 59.1% Dock H. Davis (D) 40.9%
+2025-12-07 19:59:43 - __main__ - INFO - Similarity: 98.41%
+2025-12-07 19:59:45 - __main__ - INFO - Expected: SELECT COUNT Incumbent FROM table WHERE District = Georgia 6
+2025-12-07 19:59:45 - __main__ - INFO - Predicted: SELECT Incumbent FROM table WHERE District = Georgia 6
+2025-12-07 19:59:45 - __main__ - INFO - Similarity: 94.74%
+2025-12-07 19:59:51 - __main__ - INFO - Expected: SELECT COUNT First elected FROM table WHERE Incumbent = Phil Crane
+2025-12-07 19:59:51 - __main__ - INFO - Predicted: SELECT COUNT First elected FROM table WHERE Incumbent = Phil Cran
+2025-12-07 19:59:51 - __main__ - INFO - Similarity: 99.24%
+2025-12-07 19:59:58 - __main__ - INFO - Expected: SELECT First elected FROM table WHERE Incumbent = Abner J. Mikva
+2025-12-07 19:59:58 - __main__ - INFO - Predicted: SELECT First elected FROM table WHERE Incumbent = Bennett J. Mikva
+2025-12-07 19:59:58 - __main__ - INFO - Similarity: 95.38%
+2025-12-07 20:00:04 - __main__ - INFO - Expected: SELECT COUNT Candidates FROM table WHERE Incumbent = Alvin Bush
+2025-12-07 20:00:04 - __main__ - INFO - Predicted: SELECT COUNT Incumbent FROM table WHERE District = Alvin Bush
+2025-12-07 20:00:04 - __main__ - INFO - Similarity: 79.03%
+2025-12-07 20:00:20 - __main__ - INFO - Expected: SELECT Candidates FROM table WHERE Party = Democratic AND Incumbent = Frank Chelf
+2025-12-07 20:00:20 - __main__ - INFO - Predicted: SELECT Candidates FROM table WHERE Party = Democratic AND Incumbent = Frank Chelf Running
+2025-12-07 20:00:20 - __main__ - INFO - Similarity: 95.29%
+2025-12-07 20:00:33 - __main__ - INFO - Expected: SELECT COUNT First elected FROM table WHERE District = Arkansas 4
+2025-12-07 20:00:33 - __main__ - INFO - Predicted: SELECT First elected FROM table WHERE District = Arkansas 4
+2025-12-07 20:00:33 - __main__ - INFO - Similarity: 95.16%
+2025-12-07 20:01:48 - __main__ - INFO - Expected: SELECT Position FROM table WHERE School/Club Team = Butler CC (KS)
+2025-12-07 20:01:48 - __main__ - INFO - Predicted: SELECT Position FROM table WHERE School/Club Team = Butler HC (KS)
+2025-12-07 20:01:48 - __main__ - INFO - Similarity: 98.48%
