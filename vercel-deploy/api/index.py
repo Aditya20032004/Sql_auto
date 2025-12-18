@@ -1,8 +1,7 @@
-from http.server import BaseHTTPRequestHandler
 import json
 
-class Handler(BaseHTTPRequestHandler):
-    def do_GET(self):
+def handler(request):
+    if request.method == 'GET':
         html = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,9 +229,8 @@ class Handler(BaseHTTPRequestHandler):
 </html>"""
         
         self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(html.encode())
-
-def handler(environ, start_response):
-    return Handler(environ, start_response)
+        return {
+            'statusCode': 200,
+            'headers': {'Content-Type': 'text/html'},
+            'body': html
+        }

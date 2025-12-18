@@ -1,8 +1,7 @@
-from http.server import BaseHTTPRequestHandler
 import json
 
-class Handler(BaseHTTPRequestHandler):
-    def do_GET(self):
+def handler(request):
+    if request.method == 'GET':
         # Serve HTML interface
         html = """<!DOCTYPE html>
 <html lang="en">
@@ -217,30 +216,31 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(html.encode())
         
-    def do_POST(self):
+    elif request.method == 'POST':
         # Handle SQL generation
-        content_length = int(self.headers['Content-Length'])
-        post_data = self.rfile.read(content_length)
-        
         try:
-            data = json.loads(post_data.decode('utf-8'))
+            body = request.body
+            if isinstance(body, bytes):
+                body = body.decode('utf-8')
+            
+            data = json.loads(body) if body else {}
             user_input = data.get('input', '')
             
             # Simple rule-based SQL generation (lightweight, no ML required)
             sql = generate_sql_simple(user_input)
             
-            response = {'sql': sql}
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
-            self.wfile.write(json.dumps(response).encode())
+            return {
+                'statusCode': 200,
+                'headers': {'Content-Type': 'application/json'},
+                'body': json.dumps({'sql': sql})
+            }
             
         except Exception as e:
-            error_response = {'error': str(e)}
-            self.send_response(500)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
-            self.wfile.write(json.dumps(error_response).encode())
+            return {
+                'statusCode': 500,
+                'headers': {'Content-Type': 'application/json'},
+                'body': json.dumps({'error': str(e)})
+            }
 
 def generate_sql_simple(text):
     """Lightweight rule-based SQL generation"""
