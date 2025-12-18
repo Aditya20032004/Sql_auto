@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/sql.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/sql",
+      "dest": "api/sql.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/sql.py"
+    }
+  ]
+}
