@@ -2,8 +2,6 @@ name: Sync to Hugging Face hub
 on:
   push:
     branches: [main]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -16,7 +14,5 @@ jobs:
           lfs: true
       
       - name: Push to hub
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        # CORRECTED LINE BELOW: Replaced 'oauth2' with 'Arsenal2004'
-        run: git push --force https://Arsenal2004:$HF_TOKEN@huggingface.co/spaces/Arsenal2004/Sql_auto main
+        # We use the secret directly here to avoid shell variable issues
+        run: git push --force https://Arsenal2004:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Arsenal2004/Sql_auto main
