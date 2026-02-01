@@ -14,9 +14,9 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        # REPLACE THE URL BELOW WITH YOUR HUGGING FACE SPACE URL
-        # Format: https://USER_NAME:TOKEN@huggingface.co/spaces/USER_NAME/SPACE_NAME
-        run: git push --force https://oauth2:$HF_TOKEN@huggingface.co/spaces/Arsenal2004/Sql_auto main
+        # CORRECTED LINE BELOW: Replaced 'oauth2' with 'Arsenal2004'
+        run: git push --force https://Arsenal2004:$HF_TOKEN@huggingface.co/spaces/Arsenal2004/Sql_auto main
