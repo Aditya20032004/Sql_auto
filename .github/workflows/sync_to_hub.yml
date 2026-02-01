@@ -1,1 +1,22 @@
+name: Sync to Hugging Face hub
+on:
+  push:
+    branches: [main]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Push to hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        # REPLACE THE URL BELOW WITH YOUR HUGGING FACE SPACE URL
+        # Format: https://USER_NAME:TOKEN@huggingface.co/spaces/USER_NAME/SPACE_NAME
+        run: git push --force https://oauth2:$HF_TOKEN@huggingface.co/spaces/Arsenal2004/Sql_auto main
